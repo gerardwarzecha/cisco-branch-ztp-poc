@@ -1,11 +1,4 @@
 ---
-- name: Configure hostname
+- name: Apply baseline configuration
   cisco.ios.ios_config:
-    lines:
-      - hostname SW-WAW-01
-
-- name: Configure VLAN 10
-  cisco.ios.ios_config:
-    lines:
-      - vlan 10
-      - name USERS
+    src: baseline_config.j2

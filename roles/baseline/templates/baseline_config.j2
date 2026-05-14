@@ -1,0 +1,14 @@
+hostname {{ hostname }}
+
+vlan 10
+ name USERS
+
+interface vlan 10
+ ip address {{ management_ip }} 255.255.255.0
+ no shutdown
+
+ip domain-name branch.local
+
+ntp server 192.168.1.1
+
+snmp-server community public RO
