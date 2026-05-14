@@ -1,0 +1,7 @@
+---
+- name: Cisco Branch Provisioning
+  hosts: branch_switches
+  gather_facts: no
+
+  roles:
+    - baseline
