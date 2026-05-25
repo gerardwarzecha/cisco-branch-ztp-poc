@@ -1,0 +1,7 @@
+---
+- name: Cisco Branch Router Provisioning
+  hosts: branch_routers
+  gather_facts: no
+
+  roles:
+    - baseline
