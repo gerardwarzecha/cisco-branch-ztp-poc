@@ -1,0 +1,49 @@
+interface Ethernet0/1.10
+ description LAN
+ encapsulation dot1Q 10
+ ip address {{ vlan10_ip }} 255.255.255.192
+!
+
+interface Ethernet0/1.11
+ description LAN-VOICE
+ encapsulation dot1Q 11
+ ip address {{ vlan11_ip }} 255.255.255.192
+!
+
+interface Ethernet0/1.12
+ description LAN-VIDEO
+ encapsulation dot1Q 12
+ ip address {{ vlan12_ip }} 255.255.255.192
+!
+
+interface Ethernet0/2
+ description WAN MPLS_20M
+ ip address {{ wan_ip }} 255.255.255.252
+ service-policy output PM-MPLS-PARENT
+ no shutdown
+!
+
+class-map match-any CM-VOICE
+ match dscp ef
+!
+
+class-map match-any CM-VIDEO
+ match dscp af41
+!
+
+policy-map PM-MPLS-CHILD
+ class CM-VOICE
+  priority 2000
+
+ class CM-VIDEO
+  priority 2000
+
+ class class-default
+  fair-queue
+!
+
+policy-map PM-MPLS-PARENT
+ class class-default
+  shape average {{ qos_bandwidth }}
+  service-policy PM-MPLS-CHILD
+!
