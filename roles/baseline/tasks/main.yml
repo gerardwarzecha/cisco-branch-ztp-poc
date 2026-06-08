@@ -1,4 +1,4 @@
 ---
 - name: Apply baseline configuration
   cisco.ios.ios_config:
-    src: branch_conf
+    src: branch_conf.j2
