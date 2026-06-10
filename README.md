@@ -77,6 +77,7 @@ Cisco Branch Routers
 
 ## 6. Results
 
+```text
 PLAY RECAP ***********************************************************************************************************************************************
 
 router-gdansk-01          : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
@@ -99,6 +100,8 @@ router-gdynia-01          : ok=1    changed=1    unreachable=0    failed=0    sk
 router-zakopane-01        : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 router-tarnow-01          : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 router-plock-01           : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
+
 
 ## 7. Technologies
 
